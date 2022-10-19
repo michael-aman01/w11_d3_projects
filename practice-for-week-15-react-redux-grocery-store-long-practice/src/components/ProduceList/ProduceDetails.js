@@ -1,3 +1,6 @@
+import { addToCart } from "../../store/cart";
+import { Store } from "../../index";
+
 function ProduceDetails({ produce }) {
   const cartItem = {};
 
@@ -12,6 +15,7 @@ function ProduceDetails({ produce }) {
         </button>
         <button
           className={"plus-button" + (cartItem ? " selected" : "")}
+          onClick={() => Store.dispatch(addToCart(produce.id))}
         >
           <i className="fas fa-plus" />
         </button>

@@ -6,10 +6,12 @@ import App from './App';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import {populateProduce} from './store/produce'
+import {addToCart} from './store/cart'
 
 window.populateProduce = populateProduce
+window.addToCart = addToCart
 
-const Store = configureStore()
+export const Store = configureStore()
 
 
 function Root() {
