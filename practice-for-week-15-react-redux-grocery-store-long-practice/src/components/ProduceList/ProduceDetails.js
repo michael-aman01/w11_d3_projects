@@ -1,4 +1,5 @@
 import { addToCart } from "../../store/cart";
+import { likeProduce } from "../../store/produce";
 import { Store } from "../../index";
 
 function ProduceDetails({ produce }) {
@@ -10,6 +11,8 @@ function ProduceDetails({ produce }) {
       <span>
         <button
           className={"like-button" + (produce.liked ? " selected" : "")}
+          onClick={() => Store.dispatch(likeProduce(produce.id))}
+      
         >
           <i className={"fas fa-heart"} />
         </button>
